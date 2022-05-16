@@ -1,0 +1,24 @@
+spring:
+  # datasource 数据源配置内容
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mybatis-test?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: sls123
+
+# mybatis-plus 配置内容
+mybatis-plus:
+  type-aliases-package: com.wangye.hello.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    # 打印SQL日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations:
+    classpath*:/mapper/*.xml
+  global-config:
+    db-config:
+      logic-delete-value: 2
+      logic-not-delete-value: 1
+
+debug: true
+
